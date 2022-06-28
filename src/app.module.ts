@@ -14,7 +14,7 @@ import { CatsModule } from './cats/cats.module';
       autoLoadModels: true,
       synchronize: true
     }),
-    CatsModule,
+    CatsModule
   ],
 })
 export class AppModule { }

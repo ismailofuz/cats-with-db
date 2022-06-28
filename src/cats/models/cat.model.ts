@@ -12,7 +12,7 @@ export class Cat extends Model {
     @PrimaryKey
     @Column
     catId: number;
-
+    
     @Column
     name: string;
 

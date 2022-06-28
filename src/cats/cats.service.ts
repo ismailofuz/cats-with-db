@@ -10,12 +10,17 @@ export class CatsService {
 
   constructor(@InjectModel(Cat) private readonly catModel: typeof Cat) { }
 
-  getOne(id: number): Promise<Cat> {
-    return this.catModel.findOne({
+  async getOne(id: number): Promise<Cat> {
+    const cat = await this.catModel.findOne({
       where: {
         catId: id,
       },
-    });
+    })
+    if(!cat){
+      throw new NotFoundException("This cat not found")
+    }else{
+      return cat;
+    }
   }
 
   getAll() {
