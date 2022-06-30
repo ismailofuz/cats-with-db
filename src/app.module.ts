@@ -12,7 +12,8 @@ import { CatsModule } from './cats/cats.module';
       password: '3812',
       database: 'cats',
       autoLoadModels: true,
-      synchronize: true
+      synchronize: true,
+      logging: false
     }),
     CatsModule
   ],

@@ -41,9 +41,6 @@ export class CatsService {
 
   async delete(id: number): Promise<void> {
     const cat = await this.getOne(id);
-    if (!cat) {
-      throw new NotFoundException('Not Found');
-    }
     await cat.destroy();
   }
 
